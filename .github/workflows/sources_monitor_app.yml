@@ -30,6 +30,9 @@ jobs:
         pip install -r requirements.txt
       working-directory: resources_monitor_app
 
+    - name: Install Qt dependencies
+      run: sudo apt-get update && sudo apt-get install -y libxcb-xinerama0
+
     # Запуск тестов
     - name: Run tests
       run: |
