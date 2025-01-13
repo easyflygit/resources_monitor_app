@@ -94,6 +94,10 @@ resources_monitor_app/
 └── resources.db      # База данных (генерируется автоматически)
 ```
 
+## Настройка GitHub Actions для автоматического тестирования
+Конфигурационный файл для GitHub Actions
+![Конфигурационный файл для GitHub Actions](.github/workflows/sources_monitor_app.yml)
+
 Разработчик
 - **Имя**: Артур Колесников
 - **Контакты**: akv888@inbox.ru
