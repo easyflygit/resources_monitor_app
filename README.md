@@ -65,18 +65,18 @@ python3 resource_monitor.py
 python3 -m unittest tests.py
 ```
 Тесты пройдены удачно
-![Тесты пройдены удачно](screenshots/tests_OK.png)
+![Тесты пройдены удачно](resources_monitor_app/screenshots/tests_OK.png)
 
 
 ## Скриншоты программы
 Главное окно
-![Главное окно](screenshots/resource_monitor.png)
+![Главное окно](resources_monitor_app/screenshots/resource_monitor.png)
 
 Запись в БД, запуск таймера, отображение кнопки Stop Recording
-![Запись в БД, запуск таймера, отображение кнопки Stop Recording](screenshots/recording_time_and_stop_recording_button.png)
+![Запись в БД, запуск таймера, отображение кнопки Stop Recording](resources_monitor_app/screenshots/recording_time_and_stop_recording_button.png)
 
 Обзор истории
-![Обзор истории](screenshots/view_history.png)
+![Обзор истории](resources_monitor_app/screenshots/view_history.png)
 
 
 ## Структура проекта
