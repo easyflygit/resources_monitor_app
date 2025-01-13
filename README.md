@@ -80,6 +80,7 @@ python3 -m unittest tests.py
 
 
 ## Структура проекта
+```plaintext
 resources_monitor_app/
 ├── resource_monitor.py           # Основной файл приложения
 ├── requirements.txt  # Список зависимостей
@@ -91,6 +92,7 @@ resources_monitor_app/
 │   ├── recording_time_and_stop_recording_button.png
 │   └── tests_OK.png
 └── resources.db      # База данных (генерируется автоматически)
+```
 
 Разработчик
 - **Имя**: Артур Колесников
