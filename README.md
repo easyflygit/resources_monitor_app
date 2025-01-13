@@ -84,7 +84,6 @@ python3 -m unittest tests.py
 resources_monitor_app/
 ├── resource_monitor.py           # Основной файл приложения
 ├── requirements.txt  # Список зависимостей
-├── README.md         # Инструкция
 ├── tests.py         # Тесты
 ├── screenshots/      # Папка для скриншотов
 │   ├── view_history.png
@@ -92,11 +91,13 @@ resources_monitor_app/
 │   ├── recording_time_and_stop_recording_button.png
 │   └── tests_OK.png
 └── resources.db      # База данных (генерируется автоматически)
+README.md         # Инструкция
 ```
 
 ## Настройка GitHub Actions для автоматического тестирования
-Конфигурационный файл для GitHub Actions
-![Конфигурационный файл для GitHub Actions](.github/workflows/sources_monitor_app.yml)
+
+Конфигурационный файл для GitHub Actions находится по пути:
+- `.github/workflows/sources_monitor_app.yml`
 
 Разработчик
 - **Имя**: Артур Колесников
