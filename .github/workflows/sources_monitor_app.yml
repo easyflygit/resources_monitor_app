@@ -1,0 +1,35 @@
+name: Python application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Проверка репозитория и клонирование кода
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Установка Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    # Установка зависимостей
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # Запуск тестов
+    - name: Run tests
+      run: |
+        python3 -m unittest tests.py
