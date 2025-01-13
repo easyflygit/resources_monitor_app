@@ -17,17 +17,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Переход в директорию resources_monitor_app
-    - name: Set working directory to resources_monitor_app
-      run: echo "Working directory set to resources_monitor_app"
-      working-directory: resources_monitor_app
-
     # Установка Python
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.10'
-      working-directory: resources_monitor_app
 
     # Установка зависимостей
     - name: Install dependencies
