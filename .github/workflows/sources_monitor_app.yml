@@ -1,4 +1,4 @@
-name: Run tests
+name: Python application
 
 on:
   push:
@@ -9,13 +9,21 @@ on:
       - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-24.04  # Используем последнюю версию Ubuntu
 
     steps:
+    # Проверка репозитория и клонирование кода
     - name: Checkout code
       uses: actions/checkout@v2
 
+    # Установка Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    # Установка зависимостей
     - name: Install dependencies
       run: |
         sudo apt-get update
@@ -30,6 +38,7 @@ jobs:
           libfontconfig1
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+      working-directory: resources_monitor_app
 
     - name: Set up Xvfb
       run: |
@@ -37,7 +46,9 @@ jobs:
         export DISPLAY=:99
         Xvfb :99 &  # Запуск виртуального дисплея
 
-    - name: Set environment variable for Qt offscreen mode
+    # Запуск тестов
+    - name: Run tests
       run: |
         export QT_QPA_PLATFORM=offscreen
         python -m unittest tests.py
+      working-directory: resources_monitor_app
