@@ -10,27 +10,34 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04  # Используем последнюю версию Ubuntu
 
     steps:
     # Проверка репозитория и клонирование кода
     - name: Checkout code
       uses: actions/checkout@v2
 
+    # Переход в директорию resources_monitor_app
+    - name: Set working directory to resources_monitor_app
+      run: echo "Working directory set to resources_monitor_app"
+      working-directory: resources_monitor_app
+
     # Установка Python
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.10'
+      working-directory: resources_monitor_app
 
     # Установка зависимостей
     - name: Install dependencies
       run: |
-        python3 -m pip install --upgrade pip
-        cd resources_monitor_app
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
+      working-directory: resources_monitor_app
 
     # Запуск тестов
     - name: Run tests
       run: |
-        python3 -m unittest tests.py
+        python -m unittest tests.py
+      working-directory: resources_monitor_app
