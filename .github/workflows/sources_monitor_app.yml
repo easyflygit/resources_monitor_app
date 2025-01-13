@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     # Проверка репозитория и клонирование кода
@@ -27,6 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
+        cd resources_monitor_app
         pip install -r requirements.txt
 
     # Запуск тестов
